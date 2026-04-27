@@ -155,3 +155,24 @@ fun reto8() {
     }
     println("Nota final definitiva: ${"%.2f".format(notaFinal)}")
 }
+
+
+// Reto 9: Traductor de Códigos de País
+// Usamos un Map<String, String> donde la clave es el código
+// ISO y el valor es el nombre del país, luego recorremos
+// el mapa y mostramos cada código con su país correspondiente
+
+fun reto9() {
+    val paises = mapOf(
+        "CO" to "Colombia",
+        "US" to "Estados Unidos",
+        "MX" to "México",
+        "AR" to "Argentina",
+        "BR" to "Brasil",
+        "ES" to "España"
+    )
+    println("=== Reto 9: Traductor de Códigos de País ===")
+    for (entry in paises) {
+        println("El código ${entry.key} pertenece a ${entry.value}")
+    }
+}
