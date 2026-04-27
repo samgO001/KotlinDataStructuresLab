@@ -36,3 +36,17 @@ fun reto2() {
     println("=== Reto 2: Filtro de Empleados Senior ===")
     println("Empleados senior: $seniors")
 }
+
+
+// Reto 3: Limpieza de Contactos Duplicados
+// Usamos un Set para eliminar los números repetidos
+// y luego los mostramos ordenados para la nueva agenda
+
+fun reto3() {
+    val telefonos = listOf(111, 222, 333, 111, 444, 222, 555, 333, 666, 777,
+        888, 111, 999, 444, 222, 123, 456, 789, 321, 654)
+    val unicos = telefonos.toSet()
+    val ordenados = unicos.sorted()
+    println("=== Reto 3: Limpieza de Contactos Duplicados ===")
+    println("Números únicos ordenados: $ordenados")
+}
