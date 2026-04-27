@@ -176,3 +176,20 @@ fun reto9() {
         println("El código ${entry.key} pertenece a ${entry.value}")
     }
 }
+
+
+// Reto 10: Rotación de Turnos de Trabajo
+// Tenemos una lista de 7 empleados y rotamos k posiciones
+// manualmente para que el descanso sea equitativo cada semana
+
+fun reto10() {
+    val empleados = mutableListOf("Ana", "Luis", "Carlos", "María", "Pedro", "Laura", "Jorge")
+    val k = 2
+    println("=== Reto 10: Rotación de Turnos de Trabajo ===")
+    println("Turnos originales: $empleados")
+    val rotados = mutableListOf<String>()
+    val inicio = k % empleados.size
+    for (i in inicio until empleados.size) rotados.add(empleados[i])
+    for (i in 0 until inicio) rotados.add(empleados[i])
+    println("Turnos rotados $k posiciones: $rotados")
+}
