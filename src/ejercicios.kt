@@ -131,3 +131,27 @@ fun reto7() {
     }
     println("Inventario final: $despensa")
 }
+
+
+// Reto 8: Cálculo de Promedio Académico
+// Usamos una lista de Pair<Double, Double> donde el primero
+// es la nota y el segundo el porcentaje de valor (0.0 a 1.0)
+// Multiplicamos cada nota por su peso y sumamos para la final
+
+fun reto8() {
+    val notas = listOf(
+        Pair(4.5, 0.3),
+        Pair(3.8, 0.2),
+        Pair(4.0, 0.25),
+        Pair(3.5, 0.25)
+    )
+    var notaFinal = 0.0
+    for (n in notas) {
+        notaFinal += n.first * n.second
+    }
+    println("=== Reto 8: Cálculo de Promedio Académico ===")
+    for (i in notas.indices) {
+        println("  Nota ${i + 1}: ${notas[i].first} x ${notas[i].second * 100}% = ${"%.2f".format(notas[i].first * notas[i].second)}")
+    }
+    println("Nota final definitiva: ${"%.2f".format(notaFinal)}")
+}
