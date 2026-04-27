@@ -69,3 +69,21 @@ fun reto4() {
     println("=== Reto 4: Análisis de Carrito de Compras ===")
     println("Conteo de productos: $conteo")
 }
+
+
+// Reto 5: Historial de Navegación Reversible
+// Usamos un Array<String> con las últimas 5 URLs visitadas
+// y lo invertimos manualmente con un ciclo sin usar .reverse()
+
+fun reto5() {
+    val urls = arrayOf("google.com", "youtube.com", "github.com", "stackoverflow.com", "kotlin.org")
+    println("=== Reto 5: Historial de Navegación Reversible ===")
+    print("URLs invertidas: ")
+    var i = urls.size - 1
+    while (i >= 0) {
+        print(urls[i])
+        if (i > 0) print(", ")
+        i--
+    }
+    println()
+}
