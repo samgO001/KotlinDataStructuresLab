@@ -18,3 +18,21 @@ fun reto1() {
     println("Gasto más alto: $maximo")
     println("Gasto más bajo: $minimo")
 }
+
+
+// Reto 2: Filtro de Empleados Senior
+// Usamos una lista de Pair<String, Int> (Nombre, Edad)
+// Filtramos los mayores de 30 años y los ponemos en mayúsculas
+
+fun reto2() {
+    val empleados = listOf(
+        Pair("Ana", 35), Pair("Luis", 28), Pair("Carlos", 42),
+        Pair("María", 31), Pair("Pedro", 25), Pair("Laura", 50)
+    )
+    val seniors = mutableListOf<String>()
+    for (e in empleados) {
+        if (e.second > 30) seniors.add(e.first.uppercase())
+    }
+    println("=== Reto 2: Filtro de Empleados Senior ===")
+    println("Empleados senior: $seniors")
+}
