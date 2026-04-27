@@ -50,3 +50,22 @@ fun reto3() {
     println("=== Reto 3: Limpieza de Contactos Duplicados ===")
     println("Números únicos ordenados: $ordenados")
 }
+
+
+// Reto 4: Análisis de Carrito de Compras
+// Usamos un Map<String, Int> para contar cuántas unidades
+// hay de cada producto que el cliente agregó al carrito
+
+fun reto4() {
+    val carrito = listOf("manzana", "leche", "manzana", "pan", "leche", "manzana", "huevos")
+    val conteo = mutableMapOf<String, Int>()
+    for (producto in carrito) {
+        if (conteo.containsKey(producto)) {
+            conteo[producto] = conteo[producto]!! + 1
+        } else {
+            conteo[producto] = 1
+        }
+    }
+    println("=== Reto 4: Análisis de Carrito de Compras ===")
+    println("Conteo de productos: $conteo")
+}
