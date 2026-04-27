@@ -216,3 +216,26 @@ fun reto11() {
         println("  ${entry.key} kg -> ${entry.value}")
     }
 }
+
+
+// Reto 12: Verificador de Ruta Reversible
+// Una ruta de entrega se guarda como lista de coordenadas
+// Verificamos si es "espejo" (palíndromo) comparando
+// manualmente el primer elemento con el último y así
+
+fun reto12() {
+    val ruta = listOf(1, 2, 3, 4, 3, 2, 1)
+    var esEspejo = true
+    val n = ruta.size
+    var i = 0
+    while (i < n / 2) {
+        if (ruta[i] != ruta[n - 1 - i]) {
+            esEspejo = false
+            break
+        }
+        i++
+    }
+    println("=== Reto 12: Verificador de Ruta Reversible ===")
+    println("Ruta: $ruta")
+    println("¿Es ruta espejo (palíndromo)? $esEspejo")
+}
