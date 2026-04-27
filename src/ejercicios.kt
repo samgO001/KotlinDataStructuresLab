@@ -106,3 +106,28 @@ fun reto6() {
     println("Intereses en común: $comunes")
     println("Exclusivos de persona 1: $exclusivos")
 }
+
+
+// Reto 7: Inventario de Despensa
+// Usamos un MutableMap<String, Int> para gestionar alimentos
+// Implementamos lógica para consumir (restar) y alertar
+// cuando un producto se agota (eliminarlo del mapa)
+
+fun reto7() {
+    val despensa = mutableMapOf("arroz" to 5, "leche" to 2, "pan" to 1, "huevos" to 12)
+    println("=== Reto 7: Inventario de Despensa ===")
+    println("Inventario inicial: $despensa")
+    val producto = "leche"
+    val cantidad = 2
+    if (despensa.containsKey(producto)) {
+        val restante = despensa[producto]!! - cantidad
+        if (restante <= 0) {
+            despensa.remove(producto)
+            println("¡Alerta! $producto se agotó y fue eliminado del inventario.")
+        } else {
+            despensa[producto] = restante
+            println("$producto restante: $restante")
+        }
+    }
+    println("Inventario final: $despensa")
+}
