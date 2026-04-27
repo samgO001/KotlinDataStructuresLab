@@ -193,3 +193,26 @@ fun reto10() {
     for (i in 0 until inicio) rotados.add(empleados[i])
     println("Turnos rotados $k posiciones: $rotados")
 }
+
+
+// Reto 11: Organizador de Maleta
+// Usamos un Map<Int, List<String>> para agrupar objetos
+// según su peso en kg y no exceder el límite de la aerolínea
+
+fun reto11() {
+    val objetos = listOf(
+        Pair("laptop", 2), Pair("ropa", 5), Pair("zapatos", 3),
+        Pair("libros", 4), Pair("cargador", 1), Pair("cámara", 2)
+    )
+    val maleta = mutableMapOf<Int, MutableList<String>>()
+    for (obj in objetos) {
+        val peso = obj.second
+        if (!maleta.containsKey(peso)) maleta[peso] = mutableListOf()
+        maleta[peso]!!.add(obj.first)
+    }
+    println("=== Reto 11: Organizador de Maleta ===")
+    println("Objetos agrupados por peso (kg):")
+    for (entry in maleta) {
+        println("  ${entry.key} kg -> ${entry.value}")
+    }
+}
