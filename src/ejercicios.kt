@@ -87,3 +87,22 @@ fun reto5() {
     }
     println()
 }
+
+
+// Reto 6: Compatibilidad de Intereses (Match)
+// Usamos dos Set<String> de intereses y comparamos manualmente
+// para encontrar los comunes y los exclusivos de la persona 1
+
+fun reto6() {
+    val persona1 = setOf("fútbol", "música", "viajes", "cocina", "cine")
+    val persona2 = setOf("música", "cine", "deportes", "viajes", "lectura")
+    val comunes = mutableSetOf<String>()
+    val exclusivos = mutableSetOf<String>()
+    for (interes in persona1) {
+        if (persona2.contains(interes)) comunes.add(interes)
+        else exclusivos.add(interes)
+    }
+    println("=== Reto 6: Compatibilidad de Intereses ===")
+    println("Intereses en común: $comunes")
+    println("Exclusivos de persona 1: $exclusivos")
+}
