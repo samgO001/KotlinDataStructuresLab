@@ -396,3 +396,27 @@ fun reto20() {
 }
 
 
+// Reto 21: Días de Mantenimiento (Primos)
+
+fun reto21() {
+    fun esPrimo(n: Int): Boolean {
+        if (n < 2) return false
+        for (i in 2..Math.sqrt(n.toDouble()).toInt()) {
+            if (n % i == 0) return false
+        }
+        return true
+    }
+    val marcas = arrayOf("Samsung", "LG", "Bosch", "Whirlpool", "Mabe", "Haceb")
+    val pisos = mutableListOf<Pair<Int, String>>()
+    var marcaIdx = 0
+    for (piso in 1..100) {
+        if (esPrimo(piso)) {
+            pisos.add(Pair(piso, marcas[marcaIdx % marcas.size]))
+            marcaIdx++
+        }
+    }
+    println("=== Reto 21: Días de Mantenimiento (Pisos Primos) ===")
+    for (p in pisos) println("  Piso ${p.first} -> ${p.second}")
+}
+
+
