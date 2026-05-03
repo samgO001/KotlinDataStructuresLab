@@ -337,3 +337,18 @@ fun reto17() {
     println("Suma diagonal secundaria: $diagonalSecundaria")
 }
 
+
+// Reto 18: Fusión de Recetas
+
+fun reto18() {
+    val chef1 = mapOf("harina" to 2.0, "azúcar" to 1.0, "mantequilla" to 0.5)
+    val chef2 = mapOf("harina" to 1.5, "leche" to 2.0, "azúcar" to 0.5)
+    val fusion = mutableMapOf<String, Double>()
+    for (entry in chef1) fusion[entry.key] = entry.value
+    for (entry in chef2) {
+        fusion[entry.key] = (fusion[entry.key] ?: 0.0) + entry.value
+    }
+    println("=== Reto 18: Fusión de Recetas ===")
+    println("Lista de compras combinada: $fusion")
+}
+
