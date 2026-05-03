@@ -315,3 +315,25 @@ fun reto16() {
 }
 
 
+
+// Reto 17: Mapa de Almacén (Matriz)
+
+fun reto17() {
+    val almacen = arrayOf(
+        intArrayOf(1, 2, 3, 4),
+        intArrayOf(5, 6, 7, 8),
+        intArrayOf(9, 10, 11, 12),
+        intArrayOf(13, 14, 15, 16)
+    )
+    var diagonalPrincipal = 0
+    var diagonalSecundaria = 0
+    val n = almacen.size
+    for (i in 0 until n) {
+        diagonalPrincipal += almacen[i][i]
+        diagonalSecundaria += almacen[i][n - 1 - i]
+    }
+    println("=== Reto 17: Mapa de Almacén (Matriz 4x4) ===")
+    println("Suma diagonal principal: $diagonalPrincipal")
+    println("Suma diagonal secundaria: $diagonalSecundaria")
+}
+
