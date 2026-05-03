@@ -239,3 +239,23 @@ fun reto12() {
     println("Ruta: $ruta")
     println("¿Es ruta espejo (palíndromo)? $esEspejo")
 }
+
+
+// Reto 13: Reparto de Pedidos por Camión
+
+fun reto13() {
+    val paquetes = (1..50).toList()
+    val tamanoLote = 10
+    println("=== Reto 13: Reparto de Pedidos por Camión ===")
+    var camion = 1
+    var i = 0
+    while (i < paquetes.size) {
+        val lote = mutableListOf<Int>()
+        for (j in i until minOf(i + tamanoLote, paquetes.size)) {
+            lote.add(paquetes[j])
+        }
+        println("Camión $camion: $lote")
+        i += tamanoLote
+        camion++
+    }
+}
