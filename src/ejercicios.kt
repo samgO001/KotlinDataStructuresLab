@@ -373,3 +373,26 @@ fun reto19() {
     println("=== Reto 19: Ranking de Apps - Top 10 ===")
     for (i in apps.indices) println("${i + 1}. ${apps[i].first} - ⭐ ${apps[i].second}")
 }
+
+
+
+// Reto 20: Unión de Agendas Ordenadas
+
+
+fun reto20() {
+    val agenda1 = listOf("Ana", "Carlos", "Laura", "Pedro")
+    val agenda2 = listOf("Beatriz", "Diana", "Jorge", "María")
+    val union = mutableListOf<String>()
+    var i = 0
+    var j = 0
+    while (i < agenda1.size && j < agenda2.size) {
+        if (agenda1[i] <= agenda2[j]) union.add(agenda1[i++])
+        else union.add(agenda2[j++])
+    }
+    while (i < agenda1.size) union.add(agenda1[i++])
+    while (j < agenda2.size) union.add(agenda2[j++])
+    println("=== Reto 20: Unión de Agendas Ordenadas ===")
+    println("Agenda maestra: $union")
+}
+
+
