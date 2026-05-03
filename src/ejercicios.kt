@@ -259,3 +259,24 @@ fun reto13() {
         camion++
     }
 }
+
+
+// Reto 14: Identificador de Ticket Único
+
+fun reto14() {
+    val tickets = listOf(101, 202, 303, 101, 404, 202, 505, 303, 606)
+    val conteo = mutableMapOf<Int, Int>()
+    for (t in tickets) {
+        conteo[t] = (conteo[t] ?: 0) + 1
+    }
+    var unico: Int? = null
+    for (entry in conteo) {
+        if (entry.value == 1) {
+            unico = entry.key
+            break
+        }
+    }
+    println("=== Reto 14: Identificador de Ticket Único ===")
+    println("Primer ticket único: $unico")
+}
+
