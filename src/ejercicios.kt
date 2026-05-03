@@ -352,3 +352,24 @@ fun reto18() {
     println("Lista de compras combinada: $fusion")
 }
 
+
+// Reto 19: Ranking de Apps por Calificación
+
+fun reto19() {
+    val apps = mutableListOf(
+        Pair("AppA", 4.2), Pair("AppB", 3.8), Pair("AppC", 4.9),
+        Pair("AppD", 2.5), Pair("AppE", 4.7), Pair("AppF", 3.1),
+        Pair("AppG", 4.5), Pair("AppH", 4.0), Pair("AppI", 3.6), Pair("AppJ", 4.8)
+    )
+    for (i in 0 until apps.size - 1) {
+        for (j in 0 until apps.size - 1 - i) {
+            if (apps[j].second < apps[j + 1].second) {
+                val temp = apps[j]
+                apps[j] = apps[j + 1]
+                apps[j + 1] = temp
+            }
+        }
+    }
+    println("=== Reto 19: Ranking de Apps - Top 10 ===")
+    for (i in apps.indices) println("${i + 1}. ${apps[i].first} - ⭐ ${apps[i].second}")
+}
