@@ -300,3 +300,18 @@ fun reto15() {
     println("=== Reto 15: Calculadora de IVA Selectiva ===")
     println("Productos con IVA (>$50.000): $conIva")
 }
+
+
+// Reto 16: Mantenimiento de Sensores
+
+fun reto16() {
+    val sensores = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+    val iterator = sensores.iterator()
+    while (iterator.hasNext()) {
+        if (iterator.next() % 3 == 0) iterator.remove()
+    }
+    println("=== Reto 16: Mantenimiento de Sensores ===")
+    println("Sensores activos (sin múltiplos de 3): $sensores")
+}
+
+
