@@ -420,3 +420,30 @@ fun reto21() {
 }
 
 
+// Reto 22: Pila de Platos Sucios (LIFO)
+
+fun reto22() {
+    val pila = mutableListOf<String>()
+    fun push(plato: String) {
+        pila.add(plato)
+        println("Añadido: $plato")
+    }
+    fun pop(): String? {
+        return if (pila.isEmpty()) {
+            println("Pila vacía")
+            null
+        } else {
+            val p = pila.removeAt(pila.size - 1)
+            println("Lavado: $p")
+            p
+        }
+    }
+    println("=== Reto 22: Pila de Platos Sucios ===")
+    push("Plato1")
+    push("Plato2")
+    push("Plato3")
+    println("Pila actual: $pila")
+    pop()
+    pop()
+    println("Pila restante: $pila")
+}
