@@ -526,3 +526,24 @@ fun reto26() {
 }
 
 
+
+// Reto 27: Premios a Vendedores
+
+fun reto27() {
+    val ventas = mapOf(
+        "Juan" to 5200.0,
+        "María" to 8100.0,
+        "Carlos" to 4800.0,
+        "Laura" to 9200.0,
+        "Pedro" to 6100.0
+    )
+    var total = 0.0
+    for (v in ventas.values) total += v
+    val promedio = total / ventas.size
+    println("=== Reto 27: Premios a Vendedores ===")
+    println("Promedio de ventas: $promedio")
+    println("Vendedores con bono:")
+    for (entry in ventas) {
+        if (entry.value > promedio) println("  ${entry.key}: $${entry.value} ✅")
+    }
+}
