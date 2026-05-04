@@ -463,3 +463,24 @@ fun reto23() {
     }
 }
 
+// Reto 24: Organización de Contenedores
+
+fun reto24() {
+    val manifiesto = "((()))(())()"
+    val pila = mutableListOf<Char>()
+    var balanceado = true
+    for (c in manifiesto) {
+        if (c == '(') pila.add(c)
+        else if (c == ')') {
+            if (pila.isEmpty()) {
+                balanceado = false
+                break
+            }
+            pila.removeAt(pila.size - 1)
+        }
+    }
+    if (pila.isNotEmpty()) balanceado = false
+    println("=== Reto 24: Organización de Contenedores ===")
+    println("Manifiesto: $manifiesto")
+    println("¿Contenedores balanceados? $balanceado")
+}
