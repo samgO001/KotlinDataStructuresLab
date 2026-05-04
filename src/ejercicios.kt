@@ -567,3 +567,24 @@ fun reto28() {
 }
 
 
+
+// Reto 29: Parejas de Viaje por Peso
+
+fun reto29() {
+    val maletas = listOf(23, 15, 8, 30, 17, 5, 25, 12)
+    val target = 32
+    println("=== Reto 29: Parejas de Viaje por Peso ===")
+    println("Target: $target kg")
+    var encontrado = false
+    for (i in maletas.indices) {
+        for (j in i + 1 until maletas.size) {
+            if (maletas[i] + maletas[j] == target) {
+                println("Par encontrado: maleta[${i}]=${maletas[i]} + maleta[${j}]=${maletas[j]} = $target ✅")
+                encontrado = true
+            }
+        }
+    }
+    if (!encontrado) println("No se encontró ningún par.")
+}
+
+
