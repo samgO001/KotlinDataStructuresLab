@@ -588,3 +588,25 @@ fun reto29() {
 }
 
 
+
+// Reto 30: Espejo de Layout de Tienda
+
+fun reto30() {
+    val plano = arrayOf(
+        intArrayOf(1, 2, 3),
+        intArrayOf(4, 5, 6)
+    )
+    val filas = plano.size
+    val cols = plano[0].size
+    val transpuesta = Array(cols) { IntArray(filas) }
+    for (i in 0 until filas) {
+        for (j in 0 until cols) {
+            transpuesta[j][i] = plano[i][j]
+        }
+    }
+    println("=== Reto 30: Espejo de Layout de Tienda ===")
+    println("Plano original (2x3):")
+    for (fila in plano) println("  ${fila.toList()}")
+    println("Plano transpuesto (3x2):")
+    for (fila in transpuesta) println("  ${fila.toList()}")
+}
