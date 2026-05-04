@@ -447,3 +447,19 @@ fun reto22() {
     pop()
     println("Pila restante: $pila")
 }
+
+
+// Reto 23: Seguimiento de Dieta
+
+fun reto23() {
+    val calorias = listOf(2100.0, 1850.0, 2300.0, 1900.0, 2050.0, 2200.0, 1950.0)
+    println("=== Reto 23: Seguimiento de Dieta ===")
+    for (i in 1 until calorias.size) {
+        var suma = 0.0
+        for (j in 0 until i) suma += calorias[j]
+        val promedio = suma / i
+        val diferencia = calorias[i] - promedio
+        println("Día ${i + 1}: ${calorias[i]} kcal | Diferencia con promedio anterior: ${"%.2f".format(diferencia)}")
+    }
+}
+
