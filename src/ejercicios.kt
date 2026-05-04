@@ -479,6 +479,7 @@ fun reto24() {
             pila.removeAt(pila.size - 1)
         }
     }
+
     if (pila.isNotEmpty()) balanceado = false
     println("=== Reto 24: Organización de Contenedores ===")
     println("Manifiesto: $manifiesto")
@@ -505,3 +506,23 @@ fun reto25() {
     println("Tiempo eliminado (más rápido): $minimo min")
     println("Promedio real de entrenamiento: ${"%.2f".format(promedio)} min")
 }
+
+
+// Reto 26: Compresión de Logs de Servidor
+
+fun reto26() {
+    val logs = listOf("UP", "UP", "DOWN", "DOWN", "DOWN", "UP", "UP", "UP", "DOWN")
+    val comprimido = mutableListOf<Pair<String, Int>>()
+    var i = 0
+    while (i < logs.size) {
+        val estado = logs[i]
+        var count = 1
+        while (i + count < logs.size && logs[i + count] == estado) count++
+        comprimido.add(Pair(estado, count))
+        i += count
+    }
+    println("=== Reto 26: Compresión de Logs de Servidor ===")
+    println("Logs comprimidos: $comprimido")
+}
+
+
