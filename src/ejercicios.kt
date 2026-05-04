@@ -547,3 +547,23 @@ fun reto27() {
         if (entry.value > promedio) println("  ${entry.key}: $${entry.value} ✅")
     }
 }
+
+
+// Reto 28: Calculadora de Tarifas de Parking
+
+fun reto28() {
+    val tarifas = mapOf(
+        1 to 5000, 2 to 9000, 3 to 12000, 4 to 14000, 5 to 16000,
+        6 to 17500, 7 to 19000, 8 to 20000, 9 to 21000, 10 to 22000
+    )
+    println("=== Reto 28: Calculadora de Tarifas de Parking ===")
+    println("Tabla de tarifas:")
+    for (entry in tarifas) {
+        println("  ${entry.key} hora(s) -> $${entry.value}")
+    }
+    val horas = 4
+    val costo = tarifas[horas]
+    println("Consulta: $horas horas = $${costo}")
+}
+
+
