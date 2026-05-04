@@ -484,3 +484,24 @@ fun reto24() {
     println("Manifiesto: $manifiesto")
     println("¿Contenedores balanceados? $balanceado")
 }
+
+// Reto 25: Rendimiento de Maratón
+
+fun reto25() {
+    val tiempos = mutableListOf(245.0, 310.0, 198.0, 275.0, 320.0, 260.0, 189.0, 295.0)
+    var maximo = tiempos[0]
+    var minimo = tiempos[0]
+    for (t in tiempos) {
+        if (t > maximo) maximo = t
+        if (t < minimo) minimo = t
+    }
+    tiempos.remove(maximo)
+    tiempos.remove(minimo)
+    var suma = 0.0
+    for (t in tiempos) suma += t
+    val promedio = suma / tiempos.size
+    println("=== Reto 25: Rendimiento de Maratón ===")
+    println("Tiempo eliminado (más lento): $maximo min")
+    println("Tiempo eliminado (más rápido): $minimo min")
+    println("Promedio real de entrenamiento: ${"%.2f".format(promedio)} min")
+}
